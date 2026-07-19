@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Awe Well — Privacy Policy</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 24px 96px;
+      background: #FAFAF7;
+      color: #1F2937;
+      font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    h1 { font-size: 30px; line-height: 1.25; margin: 0 0 8px; }
+    h2 { font-size: 20px; margin: 36px 0 10px; }
+    p, li { color: rgba(31, 41, 55, 0.88); }
+    .muted { color: rgba(31, 41, 55, 0.6); font-size: 15px; margin-bottom: 32px; }
+    ul { padding-left: 22px; }
+    li { margin-bottom: 8px; }
+    a { color: #1F2937; }
+    code { background: rgba(31,41,55,0.06); padding: 1px 5px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <h1>Awe Well Privacy Policy</h1>
+  <p class="muted">Last updated: July 4, 2026</p>
+
+  <p>
+    Awe Well ("Awe Well", "we", "us") is a small wellbeing app that gives you a
+    daily prompt to notice awe and wonder, and lets you write or speak a short
+    reflection. This policy explains what we collect, how we use it, and the
+    choices you have. We collect as little as possible.
+  </p>
+
+  <h2>Information we collect</h2>
+  <ul>
+    <li>
+      <strong>Account information.</strong> When you sign in with Apple, we
+      receive a unique identifier for your account and, only if you choose to
+      share it, your name and email address (which may be Apple's private relay
+      address). We use this to create and secure your account.
+    </li>
+    <li>
+      <strong>Your reflections and preferences.</strong> The reflections you
+      write or dictate, the awe "sources" you select, the prompts you save for
+      later, and the prompts you mark as "not for me." This is the content that
+      makes the app yours.
+    </li>
+    <li>
+      <strong>Approximate location (optional).</strong> Only if you turn on
+      "Tailor to where I am" in Settings, the app uses your device's approximate
+      location to look up the local time of day and current weather, so a prompt
+      can fit the moment. Your location is used on the spot and
+      <strong>never stored</strong> by us. It is off by default, and you can turn
+      it off at any time.
+    </li>
+    <li>
+      <strong>Location for "Somewhere new" (optional).</strong> If you turn on
+      "Somewhere new" in Settings, the app can notice when you have arrived
+      somewhere new and point out one real thing nearby worth a look. This uses
+      your device's location, including in the background if you grant "Always"
+      access, only to detect that you have moved and to look up nearby places.
+      Your precise location is <strong>never sent to our servers or stored</strong>;
+      it stays on your device. It is off by default, and you can turn it off at
+      any time.
+    </li>
+  </ul>
+  <p>
+    We do <strong>not</strong> collect your contacts, advertising identifiers, or
+    analytics about how you tap around the app. We do not use tracking
+    technologies, and we show no ads.
+  </p>
+
+  <h2>How we use your information</h2>
+  <ul>
+    <li>To create your account and keep your reflections safe across devices.</li>
+    <li>To generate a daily prompt tailored to the sources you picked and to steer away from prompts you disliked.</li>
+    <li>If you turn it on, to tailor a prompt to your local time of day and weather.</li>
+    <li>If you turn on "Somewhere new," to notice when you've arrived somewhere new, find one real nearby place worth a look, and send you a notification about it. This is scheduled and detected on your device.</li>
+    <li>If you turn on the daily reminder, to send you a gentle notification at the time you choose. These reminders are scheduled on your device.</li>
+    <li>To respond to you if you contact us for support.</li>
+  </ul>
+
+  <h2>Voice reflections</h2>
+  <p>
+    If you choose to speak a reflection, the speech-to-text transcription happens
+    <strong>on your device</strong> using Apple's built-in speech recognition. We
+    do not record, upload, or store any audio. Only the resulting text, which you
+    can edit before saving, becomes part of your reflection.
+  </p>
+
+  <h2>How prompts are generated, and the services we use</h2>
+  <p>We rely on a few trusted services to run Awe Well:</p>
+  <ul>
+    <li>
+      <strong>Anthropic (Claude API)</strong> generates your daily prompts. To do
+      this we send limited context: the awe sources you selected, the text of a
+      few recent prompts, and prompts you have disliked. We do
+      <strong>not</strong> send the reflections you write to Anthropic.
+    </li>
+    <li>
+      <strong>Supabase</strong> stores your account and your reflections in a
+      secure database. Your data is protected so that only your signed-in account
+      can read it, and it is transmitted over encrypted connections.
+    </li>
+    <li>
+      <strong>Apple</strong> provides Sign in with Apple for authentication.
+    </li>
+    <li>
+      <strong>Open-Meteo</strong> provides local weather. Only if you turn on
+      location tailoring or "Somewhere new," your device sends it your
+      approximate coordinates (rounded to about a kilometer) to get current
+      conditions. We send no account information, and no identifier that ties
+      the request to you.
+    </li>
+    <li>
+      <strong>Wikipedia</strong> helps "Somewhere new" find real places nearby.
+      Only if that feature is on, your device queries Wikipedia directly with
+      your approximate coordinates (rounded to about a kilometer) to find a
+      nearby place and its public description. This request goes straight from
+      your device to Wikipedia, not through our servers. Only the resulting
+      place name and description, never your coordinates, are sent to our
+      servers to write the guided visit.
+    </li>
+  </ul>
+  <p>
+    We do not sell your personal information, and we do not share it for
+    advertising.
+  </p>
+
+  <h2>Keeping and deleting your data</h2>
+  <p>
+    We keep your data for as long as your account is active. You can ask us to
+    delete your account and everything associated with it at any time by emailing
+    us at the address below, and we will remove it.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    Awe Well is not directed to children under 13, and we do not knowingly
+    collect personal information from them.
+  </p>
+
+  <h2>Changes to this policy</h2>
+  <p>
+    If we change this policy, we will update the date at the top of this page.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions or requests? Email us at
+    <a href="mailto:sloane@awe-well.com">sloane@awe-well.com</a>.
+  </p>
+</body>
+</html>
