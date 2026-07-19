@@ -28,6 +28,14 @@
       color: var(--ink);
       font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+    /* Self-hosted so no visitor request ever leaves for Google's servers. */
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('./assets/fraunces-600.woff2') format('woff2');
+    }
     .rounded {
       font-family: ui-rounded, "SF Pro Rounded", "Arial Rounded MT Bold", -apple-system, BlinkMacSystemFont, sans-serif;
     }
@@ -57,11 +65,12 @@
       box-shadow: 0 10px 34px rgba(2, 22, 77, 0.45);
     }
     .hero h1 {
-      font-size: 54px;
-      line-height: 1.1;
-      margin: 26px 0 10px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-size: 60px;
+      line-height: 1.06;
+      margin: 24px 0 10px;
+      font-weight: 600;
+      letter-spacing: 0;
     }
     .tagline {
       font-size: 22px;
@@ -213,7 +222,7 @@
 
     <div class="hero-inner">
       <img class="app-icon" src="./assets/icon-512.png" alt="Awe Well app icon" width="96" height="96" />
-      <h1 class="rounded">Awe Well</h1>
+      <h1>Awe Well</h1>
       <p class="tagline rounded">One small wonder, every day</p>
       <p class="lede">
         Awe isn't only for grand canyons. The everyday kind, a song, a stranger's
