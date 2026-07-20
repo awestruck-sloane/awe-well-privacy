@@ -292,6 +292,78 @@
     .fine { font-size: 13px; color: rgba(31, 41, 55, 0.55); margin-top: 10px; }
     .join-msg { margin-top: 12px; font-size: 16px; }
     .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+    .qlist {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .qlist .chip { text-align: center; }
+    .qfoot {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .linkbtn {
+      background: none;
+      border: none;
+      font: inherit;
+      font-size: 15px;
+      color: rgba(31, 41, 55, 0.6);
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 6px;
+    }
+    .result-lede {
+      font-size: 18px;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 24px;
+      color: rgba(31, 41, 55, 0.85);
+    }
+    .quiz { max-width: 680px; margin: 0 auto; }
+    .progress {
+      text-align: center;
+      color: rgba(31, 41, 55, 0.5);
+      font-size: 14px;
+      margin: 0 0 18px;
+    }
+    .qstep { display: none; }
+    .qstep.active { display: block; }
+    .qtitle { font-size: 21px; text-align: center; margin: 0 0 18px; font-weight: 600; }
+    .opts { display: flex; flex-direction: column; gap: 10px; max-width: 480px; margin: 0 auto; }
+    .opt {
+      background: #fff;
+      border: 1px solid rgba(31, 41, 55, 0.14);
+      border-radius: 14px;
+      padding: 14px 18px;
+      font: inherit;
+      font-size: 16px;
+      color: inherit;
+      cursor: pointer;
+      text-align: left;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .opt:hover { border-color: rgba(199, 93, 60, 0.55); }
+    .qback { text-align: center; margin: 18px 0 0; }
+    .qback a { color: rgba(31, 41, 55, 0.55); font-size: 14px; }
+    .result { display: none; max-width: 680px; margin: 0 auto; }
+    .profile-card {
+      background: #fff;
+      border: 1px solid rgba(31, 41, 55, 0.08);
+      border-radius: 18px;
+      padding: 24px 26px 22px;
+      box-shadow: 0 2px 10px rgba(31, 41, 55, 0.04);
+      margin-bottom: 18px;
+    }
+    .profile-card h3 { margin: 0 0 8px; font-size: 20px; }
+    .profile-card p { margin: 0; color: rgba(31, 41, 55, 0.8); }
+    .restart { text-align: center; margin-top: 18px; }
+    .restart a { color: rgba(31, 41, 55, 0.5); font-size: 14px; }
 
     @media (max-width: 560px) {
       .hero { padding-top: 64px; padding-bottom: 190px; }
@@ -323,7 +395,7 @@
         experiences. Awe Well is a quiet daily practice for noticing it.
       </p>
       <div class="cta-row">
-        <a class="pill pill-solid" href="#try">Try today's invitation</a>
+        <a class="pill pill-solid" href="#try">Find your kind of wonder</a>
         <span class="quiet">Coming soon to the App Store</span>
       </div>
     </div>
@@ -358,45 +430,61 @@
 
   <main>
     <section class="section" id="try">
-      <h2>Where does wonder usually find you?</h2>
-      <p class="sub">Pick one. A real invitation from the app appears,<br/>matched to your kind of wonder, new each morning.</p>
-      <div class="chips" role="group" aria-label="Pick your kind of wonder">
-        <button class="chip" type="button" data-source="nature" aria-pressed="false">
-          <strong>Nature</strong>
-          <span>light, weather, living things</span>
-        </button>
-        <button class="chip" type="button" data-source="music" aria-pressed="false">
-          <strong>Music</strong>
-          <span>a song that stops you</span>
-        </button>
-        <button class="chip" type="button" data-source="art" aria-pressed="false">
-          <strong>Art</strong>
-          <span>something someone made well</span>
-        </button>
-        <button class="chip" type="button" data-source="people" aria-pressed="false">
-          <strong>People</strong>
-          <span>kindness, courage, small gestures</span>
-        </button>
-        <button class="chip" type="button" data-source="ideas" aria-pressed="false">
-          <strong>Ideas</strong>
-          <span>a fact that rearranges the room</span>
-        </button>
-        <button class="chip" type="button" data-source="movement" aria-pressed="false">
-          <strong>Movement</strong>
-          <span>breath, pulse, balance</span>
-        </button>
+      <h2 id="quizHeading">Where does wonder usually find you?</h2>
+      <p class="sub" id="quizSub">Pick up to two. Four small questions,<br/>then an invitation matched to you.</p>
+
+      <div id="quizSteps">
+        <div id="stepSources">
+          <div class="chips" role="group" aria-label="Pick your kinds of wonder">
+            <button class="chip" type="button" data-source="nature" aria-pressed="false">
+              <strong>Nature</strong>
+              <span>light, weather, living things</span>
+            </button>
+            <button class="chip" type="button" data-source="music" aria-pressed="false">
+              <strong>Music</strong>
+              <span>a song that stops you</span>
+            </button>
+            <button class="chip" type="button" data-source="art" aria-pressed="false">
+              <strong>Art</strong>
+              <span>something someone made well</span>
+            </button>
+            <button class="chip" type="button" data-source="people" aria-pressed="false">
+              <strong>People</strong>
+              <span>kindness, courage, small gestures</span>
+            </button>
+            <button class="chip" type="button" data-source="ideas" aria-pressed="false">
+              <strong>Ideas</strong>
+              <span>a fact that rearranges the room</span>
+            </button>
+            <button class="chip" type="button" data-source="movement" aria-pressed="false">
+              <strong>Movement</strong>
+              <span>breath, pulse, balance</span>
+            </button>
+          </div>
+          <div class="qfoot">
+            <button class="btn" type="button" id="sourcesNext" disabled>Continue</button>
+          </div>
+        </div>
+
+        <div id="stepChoice" style="display: none;">
+          <div class="qlist" id="choiceList"></div>
+          <div class="qfoot">
+            <button class="linkbtn" type="button" id="choiceBack">Back</button>
+          </div>
+        </div>
       </div>
 
-      <div class="invite-wrap" id="inviteWrap">
+      <div class="invite-wrap" id="resultWrap">
+        <p class="result-lede" id="resultLede"></p>
         <div class="invite-card">
-          <p class="invite-label" id="inviteLabel">Today's invitation</p>
+          <p class="invite-label">An invitation, in your kind of wonder</p>
           <p class="invite-text" id="inviteText"></p>
         </div>
-        <p class="invite-after">A new one arrives each morning. That's the whole app.</p>
+        <p class="invite-after">In the app, one arrives each morning, written for you.<br/>Some days it arrives as a sound. Some days it points you somewhere new.</p>
 
         <div class="join">
           <h3>Be first through the door</h3>
-          <p class="why">Awe Well opens soon on the App Store. Leave your email and launch news will find you.</p>
+          <p class="why">Awe Well opens soon on the App Store. Leave your email and we'll keep your answers, so your first day already fits you.</p>
           <form class="join-form" id="joinForm" novalidate>
             <label class="hp" aria-hidden="true">Leave this empty
               <input type="text" name="website" tabindex="-1" autocomplete="off" />
@@ -482,88 +570,171 @@
   </footer>
 
   <script>
-    // Real invitations from the app's library, five per source, all doable
-    // anywhere at any hour. The pick rotates with the calendar so today's
-    // really is today's.
-    var PROMPTS = {
-      nature: [
-        "Find the nearest window and watch the sky for one full minute, noticing that no one has ever seen this exact arrangement of light and cloud before, and no one will again.",
-        "Sit by a window and find the one thing outside that is moving, and let it be the whole show for a minute.",
-        "Hold a piece of fruit and consider the whole system that made it, soil and rain and sunlight folded into something that fits your palm, and eat it slowly.",
-        "Find a glass of water and hold it up to the light, considering that this exact water has been ocean, cloud, and river more times than anyone could count.",
-        "Find the wood grain in a floor, a table, or a door near you, and follow one line of it, remembering it was once a year in a tree's life."
-      ],
-      music: [
-        "Play a song you know by heart and listen only to the drums, letting everything you usually follow become the background.",
-        "Put on the first song you ever loved and notice which part of it your body still remembers before your mind does.",
-        "Listen to a song in a language you do not speak and let the voice carry everything the words cannot, noticing you still understand.",
-        "Play a song you love and listen only for the moments of silence inside it, the gaps that make the rest land.",
-        "Hum one long note and feel where it lives in your chest, noticing your whole body is the instrument."
-      ],
-      art: [
-        "Pick up the nearest man-made object and find one decision in it someone made well, a curve or a seam or a weight, and thank them silently.",
-        "Look at any printed letter, on a package or a page, and consider that someone drew this exact alphabet, curve by curve, on purpose.",
-        "Study the shadows in your room right now as a composition, where the dark pools and the light cuts, and watch the picture no one made.",
-        "Look at a mug, bowl, or plate you use daily and really see its shape for once, turning it like you have never met it.",
-        "Look closely at the stitching on your clothing or a nearby seam, and picture the hands and machines that put it there for you."
-      ],
-      people: [
-        "Think of the person who taught you to read, whoever it was, and consider that every word you have ever read passed through that gift, and thank them silently.",
-        "Look at your own hands and find one gesture in them that belongs to a parent or grandparent, the inheritance no one wrote down.",
-        "Think of someone who was patient with you when they did not have to be, and feel the size of that small decision now.",
-        "Reread an old message from someone you love, and notice a person reached across distance and time and landed in your pocket.",
-        "Recall the last time a stranger made you laugh, and notice that two lives briefly ran on the same current and then went their ways."
-      ],
-      ideas: [
-        "Hold up your thumb and consider that its exact print has never existed before you and never will again, and study the one-time-only pattern.",
-        "Think about the number of heartbeats in an average life, around three billion, and feel one of yours spend itself right now.",
-        "Consider that every color you have ever seen happened inside your skull, and look around the room at your own private light show.",
-        "Think of one word you use daily and trace it back as far as you can guess, through parents and centuries, a sound handed mouth to mouth to reach yours.",
-        "Consider that you are, right now, spinning through space at hundreds of miles a second and feeling nothing, and sit very still inside all that motion."
-      ],
-      movement: [
-        "Close your eyes and touch your nose with one finger, first try, and appreciate the invisible map your body keeps of itself.",
-        "Take one slow breath and follow it the whole way, in through the nose and down and back out, riding it like a passenger for once.",
-        "Watch your own hand pick something up, actually watch it, the reach and the shaping and the grip, and see the machinery you never supervise.",
-        "Stand up slowly and notice the dozens of small corrections your body makes to hold you there, the balancing act it never mentions.",
-        "Trace one finger slowly along the palm of your other hand, and notice the reader and the page are the same skin."
-      ]
+    // One fixed sample invitation per source, from the app's library. The
+    // sample is a taste on purpose: the daily arrivals live in the app.
+    var SAMPLES = {
+      nature: "Find the nearest window and watch the sky for one full minute, noticing that no one has ever seen this exact arrangement of light and cloud before, and no one will again.",
+      music: "Put on the first song you ever loved and notice which part of it your body still remembers before your mind does.",
+      art: "Pick up the nearest man-made object and find one decision in it someone made well, a curve or a seam or a weight, and thank them silently.",
+      people: "Think of the person who taught you to read, whoever it was, and consider that every word you have ever read passed through that gift, and thank them silently.",
+      ideas: "Hold up your thumb and consider that its exact print has never existed before you and never will again, and study the one-time-only pattern.",
+      movement: "Close your eyes and touch your nose with one finger, first try, and appreciate the invisible map your body keeps of itself."
+    };
+
+    var QUESTIONS = [
+      {
+        key: 'last_caught',
+        heading: 'When did it last catch you?',
+        options: [
+          ['week', 'This week'],
+          ['month', 'Sometime in the last month'],
+          ['longtime', "Honestly, I can't remember"],
+          ['often', "All the time, I'm lucky"]
+        ]
+      },
+      {
+        key: 'most_days',
+        heading: 'Where are you, most days?',
+        options: [
+          ['desk', 'At a desk, indoors'],
+          ['moving', 'Out and moving'],
+          ['people', 'With people, all day'],
+          ['varies', 'It varies a lot']
+        ]
+      },
+      {
+        key: 'best_time',
+        heading: 'When could one small minute fit?',
+        options: [
+          ['morning', 'First thing in the morning'],
+          ['midday', 'Somewhere in the middle'],
+          ['evening', 'At the end of the day']
+        ]
+      }
+    ];
+
+    var RECENCY_LINE = {
+      week: "It's close to the surface for you already. A daily practice keeps it there.",
+      month: "It visits, then it slips away. A daily practice shortens the gaps.",
+      longtime: "It's been a while. That's more common than anyone admits, and it's exactly what a quiet daily practice is for.",
+      often: "It finds you easily. A daily practice gives it somewhere to land."
+    };
+    var SETTING_CLAUSE = {
+      desk: 'one you can do right where you sit',
+      moving: 'one that can meet you on the move',
+      people: 'one that can start with whoever is around you',
+      varies: 'one that can change shape with your day'
+    };
+    var TIME_CLAUSE = {
+      morning: 'first thing in the morning',
+      midday: 'in the middle of the day',
+      evening: 'at the end of the day'
     };
 
     var SUPABASE_URL = 'https://flhnxekpcvebjzhjvlsu.supabase.co';
     var SUPABASE_KEY = 'sb_publishable_fkWD7iVtNQedsjHUSddfPw_h1WGUpyc';
 
-    var chips = document.querySelectorAll('.chip');
-    var inviteWrap = document.getElementById('inviteWrap');
-    var inviteLabel = document.getElementById('inviteLabel');
+    var quizHeading = document.getElementById('quizHeading');
+    var quizSub = document.getElementById('quizSub');
+    var quizSteps = document.getElementById('quizSteps');
+    var stepSources = document.getElementById('stepSources');
+    var stepChoice = document.getElementById('stepChoice');
+    var choiceList = document.getElementById('choiceList');
+    var choiceBack = document.getElementById('choiceBack');
+    var sourcesNext = document.getElementById('sourcesNext');
+    var resultWrap = document.getElementById('resultWrap');
+    var resultLede = document.getElementById('resultLede');
     var inviteText = document.getElementById('inviteText');
     var joinForm = document.getElementById('joinForm');
     var joinEmail = document.getElementById('joinEmail');
     var joinBtn = document.getElementById('joinBtn');
     var joinMsg = document.getElementById('joinMsg');
-    var chosenSource = null;
 
-    function dayOfYear() {
-      var now = new Date();
-      var start = new Date(now.getFullYear(), 0, 0);
-      return Math.floor((now - start) / 86400000);
-    }
+    var answers = { sources: [], last_caught: null, most_days: null, best_time: null };
+    var qIndex = -1; // -1 is the sources step
 
+    var chips = document.querySelectorAll('#stepSources .chip');
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
-        chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
-        chip.setAttribute('aria-pressed', 'true');
-        chosenSource = chip.dataset.source;
-        var list = PROMPTS[chosenSource];
-        inviteText.textContent = list[dayOfYear() % list.length];
-        inviteLabel.textContent = "Today's invitation · " + chosenSource;
-        var firstReveal = inviteWrap.style.display !== 'block';
-        inviteWrap.style.display = 'block';
-        if (firstReveal) {
-          inviteWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        var src = chip.dataset.source;
+        var at = answers.sources.indexOf(src);
+        if (at >= 0) {
+          answers.sources.splice(at, 1);
+          chip.setAttribute('aria-pressed', 'false');
+        } else {
+          answers.sources.push(src);
+          chip.setAttribute('aria-pressed', 'true');
+          if (answers.sources.length > 2) {
+            var dropped = answers.sources.shift();
+            chips.forEach(function (c) {
+              if (c.dataset.source === dropped) c.setAttribute('aria-pressed', 'false');
+            });
+          }
         }
+        sourcesNext.disabled = answers.sources.length === 0;
       });
     });
+
+    sourcesNext.addEventListener('click', function () { showQuestion(0); });
+
+    function showQuestion(i) {
+      qIndex = i;
+      var q = QUESTIONS[i];
+      quizHeading.textContent = q.heading;
+      quizSub.textContent = 'Question ' + (i + 2) + ' of 4';
+      stepSources.style.display = 'none';
+      stepChoice.style.display = 'block';
+      choiceList.innerHTML = '';
+      q.options.forEach(function (opt) {
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip';
+        b.innerHTML = '<strong></strong>';
+        b.firstChild.textContent = opt[1];
+        if (answers[q.key] === opt[0]) b.setAttribute('aria-pressed', 'true');
+        b.addEventListener('click', function () {
+          answers[q.key] = opt[0];
+          b.setAttribute('aria-pressed', 'true');
+          setTimeout(function () {
+            if (qIndex + 1 < QUESTIONS.length) showQuestion(qIndex + 1);
+            else showResult();
+          }, 240);
+        });
+        choiceList.appendChild(b);
+      });
+    }
+
+    choiceBack.addEventListener('click', function () {
+      if (qIndex === 0) {
+        qIndex = -1;
+        stepChoice.style.display = 'none';
+        stepSources.style.display = 'block';
+        quizHeading.textContent = 'Where does wonder usually find you?';
+        quizSub.innerHTML = 'Pick up to two. Four small questions,<br/>then an invitation matched to you.';
+      } else {
+        showQuestion(qIndex - 1);
+      }
+    });
+
+    function sourceList() {
+      var s = answers.sources;
+      return s.length === 2 ? s[0] + ' and ' + s[1] : s[0];
+    }
+
+    function showResult() {
+      quizSteps.style.display = 'none';
+      quizHeading.textContent = 'Your kind of wonder';
+      quizSub.textContent = '';
+      resultLede.textContent =
+        'Your wonder leans toward ' + sourceList() + '. ' +
+        RECENCY_LINE[answers.last_caught] + ' ' +
+        'The app would bring you one small invitation ' +
+        TIME_CLAUSE[answers.best_time] + ', ' +
+        SETTING_CLAUSE[answers.most_days] + '.';
+      inviteText.textContent = SAMPLES[answers.sources[0]];
+      resultWrap.style.display = 'block';
+      resultWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 
     joinForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -586,7 +757,11 @@
           'Content-Type': 'application/json',
           Prefer: 'return=minimal'
         },
-        body: JSON.stringify({ email: email, wonder_source: chosenSource })
+        body: JSON.stringify({
+          email: email,
+          wonder_source: answers.sources[0] || null,
+          quiz: answers
+        })
       }).then(function (res) {
         if (res.status === 201) {
           joinForm.style.display = 'none';
