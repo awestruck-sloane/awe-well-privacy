@@ -570,15 +570,23 @@
   </footer>
 
   <script>
-    // One fixed sample invitation per source, from the app's library. The
-    // sample is a taste on purpose: the daily arrivals live in the app.
+    // One fixed sample invitation per source. The sample is a taste on
+    // purpose: the daily arrivals live in the app.
+    //
+    // These six must be CONTEXT-FREE. The app knows the weather, the hour,
+    // and (with permission) roughly where you are, so it can safely offer
+    // "watch the sky" or "step outside". The web knows none of that, so a
+    // sample must work for a windowless office at midnight and a park bench
+    // at noon alike: nothing needed but the person and what is already
+    // within reach. No sky, no window, no weather, no props, no speakers,
+    // and nothing that assumes standing or walking.
     var SAMPLES = {
-      nature: "Find the nearest window and watch the sky for one full minute, noticing that no one has ever seen this exact arrangement of light and cloud before, and no one will again.",
-      music: "Put on the first song you ever loved and notice which part of it your body still remembers before your mind does.",
+      nature: "Take one slow breath and consider that this same air has moved through oceans, forests, and the lungs of people you will never meet, and let it go gently.",
+      music: "Bring to mind a song you know completely and let it play in your head, noticing that your memory holds every instrument without being asked, and stay with it.",
       art: "Pick up the nearest man-made object and find one decision in it someone made well, a curve or a seam or a weight, and thank them silently.",
       people: "Think of the person who taught you to read, whoever it was, and consider that every word you have ever read passed through that gift, and thank them silently.",
       ideas: "Hold up your thumb and consider that its exact print has never existed before you and never will again, and study the one-time-only pattern.",
-      movement: "Close your eyes and touch your nose with one finger, first try, and appreciate the invisible map your body keeps of itself."
+      movement: "Without looking, touch your nose with one finger, first try, and appreciate the invisible map your body keeps of itself."
     };
 
     var QUESTIONS = [
