@@ -22,6 +22,7 @@
       --gold: #fec87e;
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
       background: var(--paper);
@@ -104,6 +105,17 @@
     .cta-row a.quiet {
       color: rgba(255, 255, 255, 0.95);
       font-size: 16px;
+    }
+    .cta-row span.quiet {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 16px;
+    }
+    a.pill-solid {
+      background: var(--cream);
+      border-color: var(--cream);
+      color: var(--night);
+      text-decoration: none;
+      font-weight: 700;
     }
     .hero-mountains {
       position: absolute;
@@ -201,10 +213,91 @@
     footer nav { margin-bottom: 10px; }
     footer nav a { margin: 0 10px; color: rgba(31, 41, 55, 0.78); }
 
+    /* ---------- Try one now: quiz, invitation, waitlist ---------- */
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+    @media (min-width: 720px) {
+      .chips { grid-template-columns: repeat(3, 1fr); }
+    }
+    .chip {
+      background: #fff;
+      border: 1px solid rgba(31, 41, 55, 0.14);
+      border-radius: 16px;
+      padding: 16px 14px 14px;
+      cursor: pointer;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .chip strong { display: block; font-size: 17px; margin-bottom: 2px; }
+    .chip span { color: rgba(31, 41, 55, 0.62); font-size: 14px; line-height: 1.4; }
+    .chip[aria-pressed="true"] {
+      border-color: #C75D3C;
+      box-shadow: 0 0 0 2px rgba(199, 93, 60, 0.25);
+    }
+    .invite-wrap { max-width: 680px; margin: 26px auto 0; display: none; }
+    .invite-card {
+      background: #FBF7F1;
+      border: 1px solid rgba(43, 36, 64, 0.1);
+      border-radius: 20px;
+      padding: 28px 28px 24px;
+      box-shadow: 0 10px 30px rgba(18, 25, 94, 0.08);
+      color: #2B2440;
+    }
+    .invite-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #C75D3C;
+      font-weight: 700;
+      margin: 0 0 12px;
+    }
+    .invite-text { font-size: 20px; line-height: 1.55; margin: 0; }
+    .invite-after {
+      text-align: center;
+      color: rgba(31, 41, 55, 0.62);
+      font-size: 15px;
+      margin: 14px 0 0;
+    }
+    .join { margin: 34px auto 0; max-width: 680px; text-align: center; }
+    .join h3 { font-size: 20px; margin: 0 0 4px; }
+    .join p.why { color: rgba(31, 41, 55, 0.7); margin: 0 0 16px; font-size: 16px; }
+    .join-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .join input[type="email"] {
+      flex: 1 1 240px;
+      max-width: 340px;
+      padding: 12px 16px;
+      font: inherit;
+      border-radius: 999px;
+      border: 1px solid rgba(31, 41, 55, 0.2);
+      background: #fff;
+    }
+    .btn {
+      background: #C75D3C;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 12px 24px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn:disabled { opacity: 0.6; cursor: default; }
+    .fine { font-size: 13px; color: rgba(31, 41, 55, 0.55); margin-top: 10px; }
+    .join-msg { margin-top: 12px; font-size: 16px; }
+    .hp { position: absolute; left: -9999px; opacity: 0; height: 0; overflow: hidden; }
+
     @media (max-width: 560px) {
       .hero { padding-top: 64px; padding-bottom: 190px; }
       .hero h1 { font-size: 42px; }
       .shots img { height: 360px; }
+      .invite-text { font-size: 18px; }
     }
   </style>
 </head>
@@ -230,8 +323,8 @@
         experiences. Awe Well is a quiet daily practice for noticing it.
       </p>
       <div class="cta-row">
-        <span class="pill">Coming soon to the App Store</span>
-        <a class="quiet" href="mailto:sloane@awe-well.com">Get in touch</a>
+        <a class="pill pill-solid" href="#try">Try today's invitation</a>
+        <span class="quiet">Coming soon to the App Store</span>
       </div>
     </div>
 
@@ -264,6 +357,60 @@
   </header>
 
   <main>
+    <section class="section" id="try">
+      <h2>Where does wonder usually find you?</h2>
+      <p class="sub">Pick one. A real invitation from the app appears,<br/>matched to your kind of wonder, new each morning.</p>
+      <div class="chips" role="group" aria-label="Pick your kind of wonder">
+        <button class="chip" type="button" data-source="nature" aria-pressed="false">
+          <strong>Nature</strong>
+          <span>light, weather, living things</span>
+        </button>
+        <button class="chip" type="button" data-source="music" aria-pressed="false">
+          <strong>Music</strong>
+          <span>a song that stops you</span>
+        </button>
+        <button class="chip" type="button" data-source="art" aria-pressed="false">
+          <strong>Art</strong>
+          <span>something someone made well</span>
+        </button>
+        <button class="chip" type="button" data-source="people" aria-pressed="false">
+          <strong>People</strong>
+          <span>kindness, courage, small gestures</span>
+        </button>
+        <button class="chip" type="button" data-source="ideas" aria-pressed="false">
+          <strong>Ideas</strong>
+          <span>a fact that rearranges the room</span>
+        </button>
+        <button class="chip" type="button" data-source="movement" aria-pressed="false">
+          <strong>Movement</strong>
+          <span>breath, pulse, balance</span>
+        </button>
+      </div>
+
+      <div class="invite-wrap" id="inviteWrap">
+        <div class="invite-card">
+          <p class="invite-label" id="inviteLabel">Today's invitation</p>
+          <p class="invite-text" id="inviteText"></p>
+        </div>
+        <p class="invite-after">A new one arrives each morning. That's the whole app.</p>
+
+        <div class="join">
+          <h3>Be first through the door</h3>
+          <p class="why">Awe Well opens soon on the App Store. Leave your email and launch news will find you.</p>
+          <form class="join-form" id="joinForm" novalidate>
+            <label class="hp" aria-hidden="true">Leave this empty
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </label>
+            <label class="hp" for="joinEmail">Email address</label>
+            <input type="email" id="joinEmail" name="email" placeholder="you@example.com" autocomplete="email" required />
+            <button class="btn" type="submit" id="joinBtn">Keep me posted</button>
+          </form>
+          <p class="join-msg" id="joinMsg" role="status"></p>
+          <p class="fine">Launch news only. Never sold, never shared.</p>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <h2>The whole practice, in a minute a day</h2>
       <p class="sub">Notice something, write down what you noticed, get on with your day.<br/>No streaks, no guilt, no scores.</p>
@@ -333,6 +480,130 @@
     </nav>
     <div>&copy; 2026 Awe Well, LLC</div>
   </footer>
+
+  <script>
+    // Real invitations from the app's library, five per source, all doable
+    // anywhere at any hour. The pick rotates with the calendar so today's
+    // really is today's.
+    var PROMPTS = {
+      nature: [
+        "Find the nearest window and watch the sky for one full minute, noticing that no one has ever seen this exact arrangement of light and cloud before, and no one will again.",
+        "Sit by a window and find the one thing outside that is moving, and let it be the whole show for a minute.",
+        "Hold a piece of fruit and consider the whole system that made it, soil and rain and sunlight folded into something that fits your palm, and eat it slowly.",
+        "Find a glass of water and hold it up to the light, considering that this exact water has been ocean, cloud, and river more times than anyone could count.",
+        "Find the wood grain in a floor, a table, or a door near you, and follow one line of it, remembering it was once a year in a tree's life."
+      ],
+      music: [
+        "Play a song you know by heart and listen only to the drums, letting everything you usually follow become the background.",
+        "Put on the first song you ever loved and notice which part of it your body still remembers before your mind does.",
+        "Listen to a song in a language you do not speak and let the voice carry everything the words cannot, noticing you still understand.",
+        "Play a song you love and listen only for the moments of silence inside it, the gaps that make the rest land.",
+        "Hum one long note and feel where it lives in your chest, noticing your whole body is the instrument."
+      ],
+      art: [
+        "Pick up the nearest man-made object and find one decision in it someone made well, a curve or a seam or a weight, and thank them silently.",
+        "Look at any printed letter, on a package or a page, and consider that someone drew this exact alphabet, curve by curve, on purpose.",
+        "Study the shadows in your room right now as a composition, where the dark pools and the light cuts, and watch the picture no one made.",
+        "Look at a mug, bowl, or plate you use daily and really see its shape for once, turning it like you have never met it.",
+        "Look closely at the stitching on your clothing or a nearby seam, and picture the hands and machines that put it there for you."
+      ],
+      people: [
+        "Think of the person who taught you to read, whoever it was, and consider that every word you have ever read passed through that gift, and thank them silently.",
+        "Look at your own hands and find one gesture in them that belongs to a parent or grandparent, the inheritance no one wrote down.",
+        "Think of someone who was patient with you when they did not have to be, and feel the size of that small decision now.",
+        "Reread an old message from someone you love, and notice a person reached across distance and time and landed in your pocket.",
+        "Recall the last time a stranger made you laugh, and notice that two lives briefly ran on the same current and then went their ways."
+      ],
+      ideas: [
+        "Hold up your thumb and consider that its exact print has never existed before you and never will again, and study the one-time-only pattern.",
+        "Think about the number of heartbeats in an average life, around three billion, and feel one of yours spend itself right now.",
+        "Consider that every color you have ever seen happened inside your skull, and look around the room at your own private light show.",
+        "Think of one word you use daily and trace it back as far as you can guess, through parents and centuries, a sound handed mouth to mouth to reach yours.",
+        "Consider that you are, right now, spinning through space at hundreds of miles a second and feeling nothing, and sit very still inside all that motion."
+      ],
+      movement: [
+        "Close your eyes and touch your nose with one finger, first try, and appreciate the invisible map your body keeps of itself.",
+        "Take one slow breath and follow it the whole way, in through the nose and down and back out, riding it like a passenger for once.",
+        "Watch your own hand pick something up, actually watch it, the reach and the shaping and the grip, and see the machinery you never supervise.",
+        "Stand up slowly and notice the dozens of small corrections your body makes to hold you there, the balancing act it never mentions.",
+        "Trace one finger slowly along the palm of your other hand, and notice the reader and the page are the same skin."
+      ]
+    };
+
+    var SUPABASE_URL = 'https://flhnxekpcvebjzhjvlsu.supabase.co';
+    var SUPABASE_KEY = 'sb_publishable_fkWD7iVtNQedsjHUSddfPw_h1WGUpyc';
+
+    var chips = document.querySelectorAll('.chip');
+    var inviteWrap = document.getElementById('inviteWrap');
+    var inviteLabel = document.getElementById('inviteLabel');
+    var inviteText = document.getElementById('inviteText');
+    var joinForm = document.getElementById('joinForm');
+    var joinEmail = document.getElementById('joinEmail');
+    var joinBtn = document.getElementById('joinBtn');
+    var joinMsg = document.getElementById('joinMsg');
+    var chosenSource = null;
+
+    function dayOfYear() {
+      var now = new Date();
+      var start = new Date(now.getFullYear(), 0, 0);
+      return Math.floor((now - start) / 86400000);
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.setAttribute('aria-pressed', 'false'); });
+        chip.setAttribute('aria-pressed', 'true');
+        chosenSource = chip.dataset.source;
+        var list = PROMPTS[chosenSource];
+        inviteText.textContent = list[dayOfYear() % list.length];
+        inviteLabel.textContent = "Today's invitation · " + chosenSource;
+        var firstReveal = inviteWrap.style.display !== 'block';
+        inviteWrap.style.display = 'block';
+        if (firstReveal) {
+          inviteWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      });
+    });
+
+    joinForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var honeypot = joinForm.elements.website.value;
+      var email = joinEmail.value.trim();
+      if (honeypot) { // a bot filled the invisible field; pretend and stop
+        joinMsg.textContent = "You're on the list.";
+        return;
+      }
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        joinMsg.textContent = 'That email does not look complete. One more try?';
+        return;
+      }
+      joinBtn.disabled = true;
+      joinMsg.textContent = '';
+      fetch(SUPABASE_URL + '/rest/v1/waitlist', {
+        method: 'POST',
+        headers: {
+          apikey: SUPABASE_KEY,
+          'Content-Type': 'application/json',
+          Prefer: 'return=minimal'
+        },
+        body: JSON.stringify({ email: email, wonder_source: chosenSource })
+      }).then(function (res) {
+        if (res.status === 201) {
+          joinForm.style.display = 'none';
+          joinMsg.textContent = "You're on the list. When the door opens, you'll hear first.";
+        } else if (res.status === 409) {
+          joinForm.style.display = 'none';
+          joinMsg.textContent = "You're already on the list. Good.";
+        } else {
+          joinBtn.disabled = false;
+          joinMsg.textContent = "That didn't go through. Try again in a moment, or email sloane@awe-well.com and we'll add you.";
+        }
+      }).catch(function () {
+        joinBtn.disabled = false;
+        joinMsg.textContent = "That didn't go through. Try again in a moment, or email sloane@awe-well.com and we'll add you.";
+      });
+    });
+  </script>
 
 </body>
 </html>
