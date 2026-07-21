@@ -191,6 +191,84 @@
       .shots { justify-content: center; overflow-x: visible; }
     }
 
+    /* ---------- Plans ---------- */
+    .plans {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 860px;
+      margin: 0 auto;
+      align-items: start;
+    }
+    @media (min-width: 760px) {
+      .plans { grid-template-columns: 1fr 1fr; }
+    }
+    .plan {
+      background: #fff;
+      border: 1px solid rgba(31, 41, 55, 0.1);
+      border-radius: 20px;
+      padding: 26px 26px 24px;
+      box-shadow: 0 2px 12px rgba(31, 41, 55, 0.05);
+    }
+    .plan.next {
+      background: linear-gradient(180deg, #1b2166 0%, #3c2a7d 100%);
+      border-color: transparent;
+      color: rgba(255, 255, 255, 0.92);
+    }
+    .plan-badge {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .plan .plan-badge {
+      background: rgba(199, 93, 60, 0.12);
+      color: #A84A2E;
+    }
+    .plan.next .plan-badge {
+      background: rgba(253, 243, 192, 0.16);
+      color: var(--cream);
+    }
+    .plan h3 {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: 26px;
+      margin: 0 0 6px;
+      font-weight: 600;
+    }
+    .plan .plan-line { margin: 0 0 18px; font-size: 16px; color: rgba(31, 41, 55, 0.72); }
+    .plan.next .plan-line { color: rgba(255, 255, 255, 0.75); }
+    .plan ul { list-style: none; margin: 0; padding: 0; }
+    .plan li {
+      position: relative;
+      padding-left: 26px;
+      margin-bottom: 13px;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    .plan li:before {
+      content: "";
+      position: absolute;
+      left: 6px; top: 9px;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #C75D3C;
+    }
+    .plan.next li:before { background: var(--gold); }
+    .plan li b { font-weight: 600; display: block; }
+    .plan.next li b { color: #fff; }
+    .plan li span { color: rgba(31, 41, 55, 0.66); font-size: 15px; }
+    .plan.next li span { color: rgba(255, 255, 255, 0.7); }
+    .plan-foot {
+      margin: 18px 0 0;
+      font-size: 14px;
+      color: rgba(31, 41, 55, 0.55);
+    }
+    .plan.next .plan-foot { color: rgba(255, 255, 255, 0.62); }
+
     /* ---------- Privacy band ---------- */
     .privacy-band {
       background: var(--night);
@@ -547,6 +625,41 @@
       <img src="./assets/03-saved.png" alt="Saved invitations" loading="lazy" />
       <img src="./assets/04-welcome-a.png" alt="Welcome screen: It starts with a breath" loading="lazy" />
     </div>
+
+    <section class="section" id="plans">
+      <h2>Two ways to keep it</h2>
+      <p class="sub">Awe Well is free to download and starts with a free trial.<br/>After that, one subscription, with a second one coming as the voice work lands.</p>
+      <div class="plans">
+
+        <div class="plan">
+          <span class="plan-badge">At launch</span>
+          <h3>Awe Well</h3>
+          <p class="plan-line">The daily practice, whole.</p>
+          <ul>
+            <li><b>One invitation a day</b><span>Written to fit your kind of wonder, the weather, and the hour.</span></li>
+            <li><b>Listen moments</b><span>Real recordings: a humpback singing, lightning at Jupiter, dawn over Yellowstone.</span></li>
+            <li><b>Somewhere new</b><span>One nearby thing worth a look when you arrive somewhere you haven't been.</span></li>
+            <li><b>Your journal</b><span>Type or speak what you noticed. Voice becomes text on your device.</span></li>
+            <li><b>The quiet path</b><span>For days when wonder feels far away, something gentler to stand on.</span></li>
+          </ul>
+          <p class="plan-foot">Free trial first. Cancel any time.</p>
+        </div>
+
+        <div class="plan next">
+          <span class="plan-badge">In development</span>
+          <h3>Awe Well Voice</h3>
+          <p class="plan-line">The same practice, spoken aloud.</p>
+          <ul>
+            <li><b>Spoken invitations</b><span>The day's invitation read to you, for eyes-free mornings and walks.</span></li>
+            <li><b>Guided moments</b><span>Longer voice-led sessions to settle into when a minute isn't enough.</span></li>
+            <li><b>Breathing to follow</b><span>A voice that paces your breath, so you don't have to count.</span></li>
+            <li><b>Conversations</b><span>Talk a moment through out loud. The conversation becomes the journal entry.</span></li>
+          </ul>
+          <p class="plan-foot">Not built yet. This is where Awe Well is going next.</p>
+        </div>
+
+      </div>
+    </section>
 
     <section class="privacy-band">
       <h2>Private by design</h2>
