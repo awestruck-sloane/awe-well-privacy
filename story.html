@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our story · Awe Well</title>
+  <meta name="description" content="Awe Well started as a document, not an app. Here is what we set out to build, what we refused to build, and the day the whole thing had to work for." />
+  <meta property="og:title" content="Why we built Awe Well" />
+  <meta property="og:description" content="Awe has always been part of my life. I wanted the people I love to have more of it." />
+  <meta property="og:image" content="https://awe-well.com/assets/icon-512.png" />
+  <meta property="og:url" content="https://awe-well.com/story.html" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="./assets/nav.css" />
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1F2937;
+      --paper: #FAFAF7;
+      --night: #12195e;
+      --cream: #fdf3c0;
+      --accent: #C75D3C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('./assets/fraunces-600.woff2') format('woff2');
+    }
+    a { color: inherit; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg,
+        #12195e 0%, #2e2474 32%, #623c91 60%, #ad5797 82%, #f08279 100%);
+      color: #fff;
+      text-align: center;
+      padding: 108px 24px 76px;
+    }
+    .hero .star { position: absolute; background: #f7ecd3; border-radius: 50%; }
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 50px;
+      line-height: 1.12;
+      margin: 0 0 14px;
+      position: relative;
+    }
+    .hero p {
+      position: relative;
+      font-size: 20px;
+      color: var(--cream);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 58px 0 0; }
+    h2 {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 1.2;
+      margin: 0 0 18px;
+    }
+    p { margin: 0 0 20px; }
+    .lead { font-size: 20px; line-height: 1.6; }
+    .pull {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 1.35;
+      color: var(--night);
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 22px;
+      margin: 34px 0;
+    }
+    .rules { list-style: none; padding: 0; margin: 0; }
+    .rules li { position: relative; padding-left: 30px; margin-bottom: 20px; }
+    .rules li:before {
+      content: "";
+      position: absolute;
+      left: 4px; top: 11px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .rules b { display: block; }
+
+    .cta-band {
+      background: var(--night);
+      color: rgba(255, 255, 255, 0.92);
+      text-align: center;
+      padding: 60px 24px;
+      margin-top: 72px;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 10px; }
+    .cta-band p { max-width: 480px; margin: 0 auto 24px; }
+    .cta {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--night);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 999px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px 48px;
+      color: rgba(31, 41, 55, 0.6);
+      font-size: 15px;
+    }
+    footer nav { margin-bottom: 10px; }
+    footer nav a { margin: 0 10px; color: rgba(31, 41, 55, 0.78); }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 37px; }
+      .hero p { font-size: 18px; }
+      h2 { font-size: 26px; }
+      .pull { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <span class="star" style="left:12%; top:26%; width:4px; height:4px; opacity:.8;"></span>
+    <span class="star" style="left:28%; top:44%; width:3px; height:3px; opacity:.5;"></span>
+    <span class="star" style="left:78%; top:28%; width:4px; height:4px; opacity:.85;"></span>
+    <span class="star" style="left:88%; top:52%; width:3px; height:3px; opacity:.5;"></span>
+    <h1>Why we built Awe Well</h1>
+    <p>Awe has always been part of my life. I wanted the people I love to have more of it.</p>
+  </header>
+
+  <main class="wrap">
+
+    <section>
+      <p class="lead">
+        I'm Sloane. Awe has always been a part of my life, for whatever
+        reason it stuck, though never as much of it as I would like.
+      </p>
+      <p>
+        What I started noticing was that the people I love were rarely tapping
+        into it at all. Not because anything was wrong with them. Their lives
+        were full, and busy, and the wonder had quietly been squeezed out to
+        the edges. I knew what it had done for me, so I went looking for ways
+        to help them find more of it.
+      </p>
+      <p>
+        The more I read, the bigger the thing got. Awe was not a nice extra.
+        It turned out to be a key: to better mental wellbeing, to handling
+        stress, to the part of you that keeps perspective when life is
+        pressing in. That is the point where helping a few people I love
+        turned into building this.
+      </p>
+      <p>
+        Awe Well is that work, made shareable. A way for you to rekindle your
+        own relationship with awe.
+      </p>
+      <p>
+        It started as a document, not an app: twenty pages arguing that most of
+        us are walking past the best part of the day. That document became the
+        spec. Not a feature list, a set of beliefs. That everyday awe beats the
+        rare and scenic kind. That noticing is a skill you can get back. And
+        that almost everything built in this category asks too much of people
+        who are already tired.
+      </p>
+    </section>
+
+    <section>
+      <h2>What we refused to build</h2>
+      <p>
+        Most of the early decisions were subtractions. Every one of them costs
+        us something a growth team would want, and every one of them is the
+        reason the app is worth keeping on your phone.
+      </p>
+      <ul class="rules">
+        <li>
+          <b>No streaks.</b>
+          A streak turns a good day into an obligation and a missed day into a
+          failure. Guilt is the opposite of wonder, and it is the single most
+          common reason people quietly delete apps like this one.
+        </li>
+        <li>
+          <b>No scores, no levels, no progress bar.</b>
+          There is nothing here to get good at. You noticed something today or
+          you did not, and tomorrow arrives either way.
+        </li>
+        <li>
+          <b>No feed, no friends, no sharing by default.</b>
+          The moment noticing becomes performance, it stops working. What you
+          write is for you.
+        </li>
+        <li>
+          <b>Nothing that fakes it.</b>
+          The recordings are real: a humpback from NOAA, lightning at Jupiter
+          from NASA, dawn over Yellowstone from the National Park Service. No
+          stock ambience, no generated nature sounds.
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>The day it has to work for</h2>
+      <p>
+        The longest section of that original document was not about wonder. It
+        was about the days you cannot feel it.
+      </p>
+      <p>
+        Grief, burnout, the flat grey stretch after something hard. An app that
+        only works when you are already open to being moved is an app that
+        abandons people exactly when they need it. Being told to find the
+        beauty in your day, on that day, is worse than being told nothing.
+      </p>
+      <p>
+        So there is a quiet path. On any day, one line under the invitation
+        offers something gentler instead: put both feet flat on the floor and
+        feel it hold you. It has been holding you all day without being asked.
+        Those prompts never leave your phone, because that state is nobody's
+        business but yours.
+      </p>
+      <p class="pull">
+        A practice that only works on good days is not a practice. It is a
+        decoration.
+      </p>
+    </section>
+
+    <section>
+      <h2>Built by one person, on purpose</h2>
+      <p>
+        Awe Well is made by one person, which shows up in ways both good and
+        obvious. Every invitation in the library was written and read aloud by
+        hand, because a prompt that sounds like a form letter breaks the spell.
+        Everything is opinionated, because there was no committee to sand the
+        opinions off.
+      </p>
+      <p>
+        It also means the small promises are keepable ones. Your reflections
+        are never used to train a model. Speak instead of type and your voice
+        becomes text on your phone, where the recording is never kept. The app
+        will not send you outside when the weather is dangerous, and it checks
+        the forecast before it does, because an invitation you should not take
+        is worse than none.
+      </p>
+    </section>
+
+    <section>
+      <h2>What comes next</h2>
+      <p>
+        A voice. Not narration over a screen, but the practice out loud:
+        invitations read to you on a walk, longer guided moments, and
+        eventually a conversation, where you say what you noticed and get asked
+        one more question, then another, until you find why it landed.
+      </p>
+      <p>
+        The document said that noticing is only half of it. The other half is
+        making sense of what you noticed, and that has always been easier out
+        loud than on a page.
+      </p>
+    </section>
+
+  </main>
+
+  <section class="cta-band">
+    <h2>Find your kind of wonder</h2>
+    <p>Four small questions, then an invitation of your own.</p>
+    <a class="cta" href="./#try">Start here</a>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./why-awe.html">Why awe</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./support.html">Support</a>
+      <a href="mailto:sloane@awe-well.com">sloane@awe-well.com</a>
+    </nav>
+    <div>&copy; 2026 Awe Well, LLC</div>
+  </footer>
+
+  <script src="./assets/nav.js" defer></script>
+</body>
+</html>
