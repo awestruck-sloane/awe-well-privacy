@@ -11,7 +11,7 @@
   var LINKS = [
     ['./', 'Home'],
     ['./why-awe.html', 'Why awe'],
-    ['./story.html', 'Our story'],
+    ['./story.html', 'My story'],
     null, // divider
     ['./privacy.html', 'Privacy'],
     ['./support.html', 'Support']
