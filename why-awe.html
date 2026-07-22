@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Why awe · Awe Well</title>
+  <meta name="description" content="Awe quiets self-focused rumination, expands how much time people feel they have, and shows up in the body. Here is what the research says, why adults stop feeling it, and what can be done." />
+  <meta property="og:title" content="Why awe" />
+  <meta property="og:description" content="The most under-used lever in mental wellbeing, and the easiest one to pull." />
+  <meta property="og:image" content="https://awe-well.com/assets/icon-512.png" />
+  <meta property="og:url" content="https://awe-well.com/why-awe.html" />
+  <link rel="icon" type="image/png" href="./assets/favicon.png" />
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #1F2937;
+      --paper: #FAFAF7;
+      --night: #12195e;
+      --cream: #fdf3c0;
+      --gold: #fec87e;
+      --accent: #C75D3C;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('./assets/fraunces-600.woff2') format('woff2');
+    }
+    a { color: inherit; }
+    .serif { font-family: 'Fraunces', Georgia, 'Times New Roman', serif; font-weight: 600; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(180deg,
+        #12195e 0%, #2e2474 32%, #623c91 60%, #ad5797 82%, #f08279 100%);
+      color: #fff;
+      text-align: center;
+      padding: 26px 24px 76px;
+    }
+    .hero .star {
+      position: absolute;
+      background: #f7ecd3;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .backlink {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 15px;
+      margin-bottom: 34px;
+    }
+    .backlink img { width: 30px; height: 30px; border-radius: 8px; }
+    .hero h1 {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 52px;
+      line-height: 1.1;
+      margin: 0 0 14px;
+      position: relative;
+    }
+    .hero p {
+      position: relative;
+      font-size: 20px;
+      color: var(--cream);
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    /* ---------- Body ---------- */
+    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 60px 0 0; }
+    h2 {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 31px;
+      line-height: 1.2;
+      margin: 0 0 18px;
+    }
+    p { margin: 0 0 20px; }
+    .lead { font-size: 20px; line-height: 1.6; }
+    .pull {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-weight: 600;
+      font-size: 25px;
+      line-height: 1.35;
+      color: var(--night);
+      border-left: 3px solid var(--accent);
+      padding: 4px 0 4px 22px;
+      margin: 34px 0;
+    }
+
+    /* ---------- Findings ---------- */
+    .findings { display: grid; gap: 16px; margin: 8px 0 0; }
+    @media (min-width: 680px) { .findings { grid-template-columns: 1fr 1fr; } }
+    .finding {
+      background: #fff;
+      border: 1px solid rgba(31, 41, 55, 0.09);
+      border-radius: 16px;
+      padding: 22px 22px 18px;
+    }
+    .finding h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .finding p { margin: 0; font-size: 16px; color: rgba(31, 41, 55, 0.78); }
+
+    /* ---------- Practice list ---------- */
+    .practice { list-style: none; padding: 0; margin: 0; }
+    .practice li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 20px;
+    }
+    .practice li:before {
+      content: "";
+      position: absolute;
+      left: 4px; top: 10px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+    .practice b { display: block; }
+
+    /* ---------- CTA ---------- */
+    .cta-band {
+      background: var(--night);
+      color: rgba(255, 255, 255, 0.92);
+      text-align: center;
+      padding: 60px 24px;
+      margin-top: 72px;
+    }
+    .cta-band h2 { color: #fff; margin-bottom: 10px; }
+    .cta-band p { max-width: 480px; margin: 0 auto 24px; }
+    .cta {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--night);
+      text-decoration: none;
+      font-weight: 700;
+      padding: 13px 26px;
+      border-radius: 999px;
+    }
+
+    /* ---------- Sources ---------- */
+    .sources { padding: 52px 0 0; font-size: 14px; color: rgba(31, 41, 55, 0.62); }
+    .sources h3 { font-size: 14px; letter-spacing: 0.09em; text-transform: uppercase; margin: 0 0 12px; }
+    .sources ol { margin: 0; padding-left: 20px; }
+    .sources li { margin-bottom: 8px; }
+    .disclaimer { margin-top: 20px; font-style: italic; }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px 48px;
+      color: rgba(31, 41, 55, 0.6);
+      font-size: 15px;
+    }
+    footer nav { margin-bottom: 10px; }
+    footer nav a { margin: 0 10px; color: rgba(31, 41, 55, 0.78); }
+
+    @media (max-width: 560px) {
+      .hero h1 { font-size: 38px; }
+      .hero p { font-size: 18px; }
+      h2 { font-size: 26px; }
+      .pull { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <span class="star" style="left:10%; top:18%; width:4px; height:4px; opacity:.8;"></span>
+    <span class="star" style="left:26%; top:36%; width:3px; height:3px; opacity:.55;"></span>
+    <span class="star" style="left:80%; top:20%; width:4px; height:4px; opacity:.85;"></span>
+    <span class="star" style="left:90%; top:44%; width:3px; height:3px; opacity:.5;"></span>
+    <span class="star" style="left:66%; top:12%; width:3px; height:3px; opacity:.7;"></span>
+
+    <a class="backlink" href="./">
+      <img src="./assets/icon-512.png" alt="" width="30" height="30" />
+      Awe Well
+    </a>
+    <h1>Why awe</h1>
+    <p>The most under-used lever in mental wellbeing,<br/>and the easiest one to pull.</p>
+  </header>
+
+  <main class="wrap">
+
+    <section>
+      <p class="lead">
+        Awe is what happens when you meet something vast enough that your mind
+        has to widen to hold it.
+      </p>
+      <p>
+        Psychologists define it by two parts: something vast, and the need to
+        adjust the model you were carrying in order to fit it in. A canyon
+        qualifies. So does the fact that the light reaching your window left
+        the sun eight minutes ago, or a stranger being kinder than the
+        situation called for.
+      </p>
+      <p>
+        Which means awe is not rare and it is not scenic. It is available on a
+        Tuesday, indoors, in a life with no time in it.
+      </p>
+    </section>
+
+    <section>
+      <h2>What it does</h2>
+      <p>
+        The research is unusually strong for how little this category uses it.
+      </p>
+      <div class="findings">
+        <div class="finding">
+          <h3>It quiets the loop</h3>
+          <p>
+            Awe pulls attention off the self. Researchers call it the small
+            self, and it runs opposite to the self-focused rumination that
+            keeps anxious and low moods circling.
+          </p>
+        </div>
+        <div class="finding">
+          <h3>It gives back time</h3>
+          <p>
+            In one set of studies, people who had just felt awe reported
+            feeling less pressed for time and were more willing to give some
+            of it away.
+          </p>
+        </div>
+        <div class="finding">
+          <h3>It shows up in the body</h3>
+          <p>
+            Across positive emotions measured against inflammatory markers,
+            awe was the one most strongly associated with lower levels.
+          </p>
+        </div>
+        <div class="finding">
+          <h3>It responds to practice</h3>
+          <p>
+            Older adults sent on a weekly awe walk for eight weeks reported
+            more warmth and compassion, and less daily distress, than a
+            control group taking ordinary walks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why you stopped feeling it</h2>
+      <p>
+        Wonder is the first thing adult life takes. Deadlines, logistics, the
+        same commute, the same ceiling, and a hundred remarkable things a day
+        that stopped registering years ago.
+      </p>
+      <p>
+        The capacity does not disappear. It stops getting used. Most people do
+        not notice it is gone until something cracks it open, a view on a trip,
+        a piece of music at the wrong moment, and they think: I used to feel
+        that more often.
+      </p>
+      <p class="pull">
+        Awe Well is for the person who used to be moved more often and would
+        like to be again.
+      </p>
+    </section>
+
+    <section>
+      <h2>What can be done</h2>
+      <p>
+        Getting it back asks less than anything else in this category. No
+        skill, no stillness, no twenty minutes, no belief. The research points
+        at small and frequent rather than rare and grand, which is convenient,
+        because small and frequent is what fits in a real week.
+      </p>
+      <ul class="practice">
+        <li>
+          <b>One invitation a day.</b>
+          Something specific enough to actually do. Press a finger to your
+          wrist and count ten beats. Find the oldest thing you can see from
+          where you sit.
+        </li>
+        <li>
+          <b>Written for the moment you are in.</b>
+          Your kind of wonder, the weather outside, the hour on the clock. An
+          invitation you cannot take is just another notification.
+        </li>
+        <li>
+          <b>Keep a line about it.</b>
+          Not a diary. One sentence, spoken or typed, so that the noticing has
+          somewhere to land and something to read back later.
+        </li>
+        <li>
+          <b>Somewhere to go on the hard days.</b>
+          Some days wonder is out of reach, and being told to feel it makes it
+          worse. On those days the app offers something quieter to stand on
+          instead.
+        </li>
+        <li>
+          <b>No streaks, no scores, no guilt.</b>
+          A practice you can miss for a week and return to. Guilt is what kills
+          these apps, and it is the opposite of the state we are aiming for.
+        </li>
+      </ul>
+    </section>
+
+    <section class="sources">
+      <h3>Sources</h3>
+      <ol>
+        <li>Keltner, D. and Haidt, J. (2003). Approaching awe, a moral, spiritual, and aesthetic emotion. <em>Cognition and Emotion</em>.</li>
+        <li>Piff, P. et al. (2015). Awe, the small self, and prosocial behavior. <em>Journal of Personality and Social Psychology</em>.</li>
+        <li>Rudd, M., Vohs, K. and Aaker, J. (2012). Awe expands people's perception of time, alters decision making, and enhances well-being. <em>Psychological Science</em>.</li>
+        <li>Stellar, J. et al. (2015). Positive affect and markers of inflammation. <em>Emotion</em>.</li>
+        <li>Sturm, V. et al. (2020). Big smile, small self: awe walks promote prosocial positive emotions in older adults. <em>Emotion</em>.</li>
+      </ol>
+      <p class="disclaimer">
+        Awe Well is a daily practice, not treatment, and it is not a substitute
+        for care from a professional.
+      </p>
+    </section>
+
+  </main>
+
+  <section class="cta-band">
+    <h2>Find your kind of wonder</h2>
+    <p>Four small questions, then an invitation of your own.</p>
+    <a class="cta" href="./#try">Start here</a>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="./">Home</a>
+      <a href="./privacy.html">Privacy</a>
+      <a href="./support.html">Support</a>
+      <a href="mailto:sloane@awe-well.com">sloane@awe-well.com</a>
+    </nav>
+    <div>&copy; 2026 Awe Well, LLC</div>
+  </footer>
+
+</body>
+</html>
