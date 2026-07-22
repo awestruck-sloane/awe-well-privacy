@@ -195,7 +195,7 @@
       gap: 20px;
       max-width: 860px;
       margin: 0 auto;
-      align-items: start;
+      /* Default stretch: both cards run the full height of the row. */
     }
     @media (min-width: 760px) {
       .plans { grid-template-columns: 1fr 1fr; }
@@ -206,6 +206,11 @@
       border-radius: 20px;
       padding: 26px 26px 24px;
       box-shadow: 0 2px 12px rgba(31, 41, 55, 0.05);
+    }
+    .plan.next {
+      background: linear-gradient(180deg, #1b2166 0%, #3c2a7d 100%);
+      border-color: transparent;
+      color: rgba(255, 255, 255, 0.92);
     }
     .plan-badge {
       display: inline-block;
@@ -221,10 +226,9 @@
       background: rgba(199, 93, 60, 0.12);
       color: #A84A2E;
     }
-    /* Same weight as its sibling, different accent: a ladder, not a downgrade. */
     .plan.next .plan-badge {
-      background: rgba(60, 42, 125, 0.12);
-      color: #3C2A7D;
+      background: rgba(253, 243, 192, 0.16);
+      color: var(--cream);
     }
     .plan h3 {
       font-family: 'Fraunces', Georgia, serif;
@@ -233,6 +237,7 @@
       font-weight: 600;
     }
     .plan .plan-line { margin: 0 0 18px; font-size: 16px; color: rgba(31, 41, 55, 0.72); }
+    .plan.next .plan-line { color: rgba(255, 255, 255, 0.75); }
     .plan ul { list-style: none; margin: 0; padding: 0; }
     .plan li {
       position: relative;
@@ -249,9 +254,11 @@
       border-radius: 50%;
       background: #C75D3C;
     }
-    .plan.next li:before { background: #3C2A7D; }
+    .plan.next li:before { background: var(--gold); }
     .plan li b { font-weight: 600; display: block; }
+    .plan.next li b { color: #fff; }
     .plan li span { color: rgba(31, 41, 55, 0.66); font-size: 15px; }
+    .plan.next li span { color: rgba(255, 255, 255, 0.7); }
 
     /* ---------- Privacy band ---------- */
     .privacy-band {
@@ -629,7 +636,7 @@
         </div>
 
         <div class="plan next">
-          <span class="plan-badge">Coming next</span>
+          <span class="plan-badge">Coming soon</span>
           <h3>Awe Well Voice</h3>
           <p class="plan-line">The practice out loud, and further in.</p>
           <ul>
@@ -637,7 +644,7 @@
             <li><b>Spoken invitations</b><span>The day's invitation read to you, for eyes-free mornings and walks.</span></li>
             <li><b>Guided moments</b><span>Longer voice-led sessions to settle into when a minute isn't enough.</span></li>
             <li><b>Breathing to follow</b><span>A voice that paces your breath, so you don't have to count.</span></li>
-            <li><b>Conversations</b><span>Say what you noticed out loud, then follow it further. A question back, then another, until you find why it landed and what it touches in the rest of your life. Where a written line stops, this keeps going. What you arrive at becomes the journal entry.</span></li>
+            <li><b>Conversations</b><span>Explore what a moment meant. Delve further than a written line goes, and find what it touches in the rest of your life.</span></li>
           </ul>
         </div>
 
