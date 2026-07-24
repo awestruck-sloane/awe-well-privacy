@@ -282,6 +282,18 @@
     }
     footer nav { margin-bottom: 10px; }
     footer nav a { margin: 0 10px; color: rgba(31, 41, 55, 0.78); }
+    /* Grant condition: display the ElevenLabs Grants logo, linking back.
+       Self-hosted copy of their badge, keeping the site's no-third-party
+       -requests rule; the link back is what the condition requires. */
+    .voice-credit { margin: 26px 0 14px; }
+    .voice-credit a { display: inline-block; text-decoration: none; }
+    .voice-credit .vc-line {
+      display: block;
+      font-size: 13px;
+      color: rgba(31, 41, 55, 0.55);
+      margin-bottom: 9px;
+    }
+    .voice-credit img { display: block; margin: 0 auto; opacity: 0.85; }
 
     /* ---------- Try one now: quiz, invitation, waitlist ---------- */
     .chips {
@@ -674,6 +686,12 @@
       <a href="./support.html">Support</a>
       <a href="mailto:sloane@awe-well.com">sloane@awe-well.com</a>
     </nav>
+    <div class="voice-credit">
+      <a href="https://elevenlabs.io/startup-grants">
+        <span class="vc-line">Voice powered by ElevenLabs</span>
+        <img src="./assets/elevenlabs-grants.webp" alt="ElevenLabs Grants" width="230" height="20" loading="lazy" />
+      </a>
+    </div>
     <div>&copy; 2026 Awe Well, LLC</div>
   </footer>
 
