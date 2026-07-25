@@ -27,7 +27,7 @@
 </head>
 <body class="nav-light">
   <h1>Awe Well Privacy Policy</h1>
-  <p class="muted">Last updated: July 4, 2026</p>
+  <p class="muted">Last updated: July 25, 2026</p>
 
   <p>
     Awe Well ("Awe Well", "we", "us") is a small wellbeing app that gives you a
@@ -93,6 +93,36 @@
     can edit before saving, becomes part of your reflection.
   </p>
 
+  <h2>Spoken conversations</h2>
+  <p>
+    Some plans include spoken conversations with an in-app companion. These are
+    different from voice reflections, and they are always something you choose
+    to start.
+  </p>
+  <ul>
+    <li>
+      When you start one, your voice is streamed in real time to
+      <strong>ElevenLabs</strong>, our voice partner, so the companion can hear
+      and answer you. We have configured ElevenLabs not to save call audio: no
+      recording of your voice is kept, by us or by them.
+    </li>
+    <li>The conversation itself is not stored. When it ends, it is gone.</li>
+    <li>
+      <strong>Share your recent reflections</strong> (off until you turn it on)
+      sends your last few journal entries with that conversation as context, so
+      the companion can meet you where you have been.
+    </li>
+    <li>
+      <strong>Let it remember you</strong> (off until you turn it on) allows the
+      companion to keep short notes, plus a brief summary of what each
+      conversation was about. To write that summary, the conversation's text is
+      processed once, at the end, by Anthropic's Claude, which does not retain
+      it. Notes and summaries are stored with the same protections as your
+      reflections, every one of them is visible in the app's settings, and you
+      can delete any of them, or all of them with your account, at any time.
+    </li>
+  </ul>
+
   <h2>How prompts are generated, and the services we use</h2>
   <p>We rely on a few trusted services to run Awe Well:</p>
   <ul>
@@ -103,9 +133,15 @@
       <strong>not</strong> send the reflections you write to Anthropic.
     </li>
     <li>
-      <strong>Supabase</strong> stores your account and your reflections in a
-      secure database. Your data is protected so that only your signed-in account
-      can read it, and it is transmitted over encrypted connections.
+      <strong>ElevenLabs</strong> powers spoken conversations, only when you
+      start one. See "Spoken conversations" above for exactly what is shared
+      and what is never kept.
+    </li>
+    <li>
+      <strong>Supabase</strong> stores your account, your reflections, and any
+      companion notes you have allowed, in a secure database. Your data is
+      protected so that only your signed-in account can read it, and it is
+      transmitted over encrypted connections.
     </li>
     <li>
       <strong>Apple</strong> provides Sign in with Apple for authentication.
