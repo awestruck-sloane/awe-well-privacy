@@ -70,17 +70,27 @@
     .tagline {
       font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
       font-weight: 600;
-      font-size: 38px;
-      line-height: 1.14;
+      font-size: 40px;
+      line-height: 1.16;
       color: var(--cream);
-      margin: 26px 0 16px;
+      margin: 26px 0 22px;
       letter-spacing: 0;
+      text-wrap: balance;
+    }
+    .hero-images {
+      font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.9);
+      margin: 0 auto 22px;
+      max-width: 560px;
     }
     .hero p.lede {
-      font-size: 18px;
-      color: rgba(255, 255, 255, 0.92);
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.78);
       margin: 0 auto 34px;
-      max-width: 520px;
+      max-width: 440px;
     }
     .cta-row {
       display: flex;
@@ -479,12 +489,15 @@
 
     <div class="hero-inner">
       <img class="app-icon" src="./assets/icon-512.png" alt="Awe Well" width="116" height="116" />
-      <h1 class="tagline">You didn't lose it. You stopped using it.</h1>
+      <h1 class="tagline">You didn't lose it.<br/>You stopped using it.</h1>
+      <p class="hero-images">
+        The song that stops you mid sentence.<br/>
+        The light on a wall at four o'clock.<br/>
+        The stranger who waited.
+      </p>
       <p class="lede">
-        The song that stops you mid sentence. The light on a wall at four
-        o'clock. The stranger who waited. They still happen every day; you
-        just stopped catching them. Awe Well is one small invitation a day to
-        start again. About a minute, most days.
+        They still happen every day. Awe Well is one small invitation a day,
+        about a minute, to start catching them again.
       </p>
       <div class="cta-row">
         <a class="pill pill-solid" href="#try">Find your kind of wonder</a>
