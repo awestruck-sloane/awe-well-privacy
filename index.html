@@ -166,6 +166,15 @@
     }
     .card h3 { margin: 0 0 8px; font-size: 19px; }
     .card p { margin: 0; color: rgba(31, 41, 55, 0.8); font-size: 16px; }
+    .card .src {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 13px;
+      color: rgba(31, 41, 55, 0.5);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(31, 41, 55, 0.22);
+    }
+    .card .src:hover { color: var(--ink); border-bottom-color: var(--ink); }
 
     /* ---------- Screenshots ---------- */
     .shots {
@@ -470,12 +479,12 @@
 
     <div class="hero-inner">
       <img class="app-icon" src="./assets/icon-512.png" alt="Awe Well" width="116" height="116" />
-      <h1 class="tagline">You used to be moved more often.</h1>
+      <h1 class="tagline">You didn't lose it. You stopped using it.</h1>
       <p class="lede">
-        The song that stopped you mid sentence, the light on a wall at four
-        o'clock, the stranger who waited. They still happen every day; life
-        just got loud. Awe Well is one small invitation a day to start
-        catching them again. About a minute, most days.
+        The song that stops you mid sentence. The light on a wall at four
+        o'clock. The stranger who waited. They still happen every day; you
+        just stopped catching them. Awe Well is one small invitation a day to
+        start again. About a minute, most days.
       </p>
       <div class="cta-row">
         <a class="pill pill-solid" href="#try">Find your kind of wonder</a>
@@ -522,6 +531,7 @@
             Across five studies, people who had just felt awe became more
             generous, more helpful, and less entitled.
           </p>
+          <a class="src" href="https://doi.org/10.1037/pspi0000018" target="_blank" rel="noopener">Piff et al., 2015</a>
         </div>
         <div class="card">
           <h3>Time comes back</h3>
@@ -529,6 +539,15 @@
             People who had just felt it reported feeling less pressed for
             time, and were more willing to give some of it away.
           </p>
+          <a class="src" href="https://doi.org/10.1177/0956797612438731" target="_blank" rel="noopener">Rudd, Vohs &amp; Aaker, 2012</a>
+        </div>
+        <div class="card">
+          <h3>It shows up in the body</h3>
+          <p>
+            Of the positive emotions one study measured, awe was the one most
+            linked to lower inflammatory markers.
+          </p>
+          <a class="src" href="https://doi.org/10.1037/emo0000033" target="_blank" rel="noopener">Stellar et al., 2015</a>
         </div>
         <div class="card">
           <h3>It responds to practice</h3>
@@ -536,9 +555,10 @@
             Eight weeks of weekly awe walks left older adults with more
             warmth and less daily distress than ordinary walks.
           </p>
+          <a class="src" href="https://doi.org/10.1037/emo0000876" target="_blank" rel="noopener">Sturm et al., 2022</a>
         </div>
       </div>
-      <p class="sub" style="margin-top: 18px;"><a href="./why-awe.html">Read the research</a></p>
+      <p class="sub" style="margin-top: 18px;"><a href="./why-awe.html">Read the full research</a></p>
     </section>
 
     <section class="section" id="try">
