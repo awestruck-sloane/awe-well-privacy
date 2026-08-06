@@ -24,10 +24,17 @@
     a { color: #1F2937; }
     code { background: rgba(31,41,55,0.06); padding: 1px 5px; border-radius: 5px; }
   </style>
+  <!-- Privacy-friendly analytics by Plausible: cookieless, aggregate only,
+       marketing site only. The app and the journal carry no such script. -->
+  <script async src="https://plausible.io/js/pa-cO6MNz9UzXMNSxGT1dzLt.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
 </head>
 <body class="nav-light">
   <h1>Awe Well Privacy Policy</h1>
-  <p class="muted">Last updated: August 2, 2026</p>
+  <p class="muted">Last updated: August 5, 2026</p>
 
   <p>
     Awe Well is a small wellbeing app that gives you a daily prompt to notice
@@ -71,9 +78,19 @@
     </li>
   </ul>
   <p>
-    We do <strong>not</strong> collect your contacts, advertising identifiers, or
-    analytics about how you tap around the app. We do not use tracking
-    technologies, and we show no ads.
+    <strong>We count actions, never content.</strong> To understand whether
+    Awe Well is working, we keep simple counts of a few structural moments,
+    like the app being opened or a reflection being saved. These counts
+    record that something happened, never what you wrote: no reflection
+    text, no titles, nothing you typed or said ever enters them, and this
+    is enforced by the server itself, which rejects anything beyond a short
+    fixed list of event names. The counts live in our own database
+    (Supabase, below), not with an analytics company.
+  </p>
+  <p>
+    We do <strong>not</strong> collect your contacts or advertising
+    identifiers, we do not use cookies or cross-site tracking, and we show
+    no ads.
   </p>
 
   <h2>How we use your information</h2>
@@ -163,6 +180,13 @@
       your device to Wikipedia, not through our servers. Only the resulting
       place name and description, never your coordinates, are sent to our
       servers to write the guided visit.
+    </li>
+    <li>
+      <strong>Plausible Analytics</strong> counts visits to our public
+      website, awe-well.com, without cookies, without personal data, and
+      without following you across the web. It runs on the website only:
+      the app and your journal, including app.awe-well.com, carry no
+      analytics script from anyone.
     </li>
   </ul>
   <p>
