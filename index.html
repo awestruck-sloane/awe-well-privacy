@@ -843,9 +843,22 @@
     var answers = { sources: [], last_caught: null, most_days: null, best_time: null };
     var qIndex = -1; // -1 is the sources step
 
+    // Three funnel moments for Plausible, and only these: first quiz touch,
+    // quiz completed, waitlist joined. Aggregate counts, no properties, no
+    // answers ride along. The stub in <head> queues safely if the script
+    // has not loaded, and does nothing at all if it is blocked.
+    var quizStartFired = false;
+    function goal(name) {
+      if (window.plausible) window.plausible(name);
+    }
+
     var chips = document.querySelectorAll('#stepSources .chip');
     chips.forEach(function (chip) {
       chip.addEventListener('click', function () {
+        if (!quizStartFired) {
+          quizStartFired = true;
+          goal('Quiz Started');
+        }
         var src = chip.dataset.source;
         var at = answers.sources.indexOf(src);
         if (at >= 0) {
@@ -912,6 +925,7 @@
     }
 
     function showResult() {
+      goal('Quiz Completed');
       quizSteps.style.display = 'none';
       quizHeading.textContent = 'Your kind of wonder';
       quizSub.textContent = '';
@@ -954,6 +968,7 @@
         })
       }).then(function (res) {
         if (res.status === 201) {
+          goal('Waitlist Signup');
           joinForm.style.display = 'none';
           joinMsg.textContent = "You're on the list. When the door opens, you'll hear first.";
         } else if (res.status === 409) {
